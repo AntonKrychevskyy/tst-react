@@ -1,23 +1,23 @@
-# name: chatgpt-code-reviewer
-# run-name: chatgpt-code-reviewer
+name: chatgpt-code-reviewer
+run-name: chatgpt-code-reviewer
 
-# permissions:
-#   contents: read
-#   pull-requests: write
+permissions:
+  contents: read
+  pull-requests: write
   
-# on:
-#   pull_request:
-#     types: [opened, reopened, synchronize]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
     
-# jobs:
-#   chatgpt-code-reviewer:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: ChatGPT Review
-#         uses: magnificode-ltd/chatgpt-code-reviewer@v0.0.8
-#         # with:
-#         # model: gpt-3.5-turbo
-#         # max_tokens: 4096
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+jobs:
+  chatgpt-code-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ChatGPT Review
+        uses: magnificode-ltd/chatgpt-code-reviewer@v0.0.8
+        # with:
+        # model: gpt-3.5-turbo
+        # max_tokens: 4096
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
