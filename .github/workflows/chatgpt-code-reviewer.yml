@@ -8,6 +8,10 @@ jobs:
   chatgpt-code-reviewer:
     runs-on: ubuntu-latest
     steps:
+      - name: Installing node.js
+        uses: actions/setup-node@v4 # Used to install node environment - XXX https://github.com/actions/setup-node
+        with:
+          node-version: 20 # Use the same node.js version as the one Vercel's uses (currently node18.x)
       - name: ChatGPT Review
         uses: magnificode-ltd/chatgpt-code-reviewer@v0.0.8
         # with:
